@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Playfair+Display:ital,wght@1,700&display=swap');
+
+ body {
+     background-color: #f4efec;
+     font-family: 'Poppins', sans-serif;
+     color: #000;
+     position: relative;
+ }
+
+ .title-italic {
+     font-family: 'Playfair Display', serif;
+     font-style: italic;
+     font-weight: 700;
+ }
+
+ .accent-vibrant-pink {
+     color: #e7469d;
+ }
+
+ .bg-custom-light-pink {
+     background-color: #f7d7d7;
+ }
+
+ .border-custom-light-pink {
+     border-color: #e08c8c;
+ }
+
+ .background-title {
+     position: absolute;
+     top: 60px;
+     width: 100%;
+     z-index: 0;
+     text-align: center;
+     pointer-events: none;
+ }
+
+ .bg-title-text {
+     font-size: 8rem;
+     font-weight: 800;
+     line-height: 0.75;
+     color: rgba(231, 70, 157, 0.25);
+ }
+
+ @media (min-width: 768px) {
+     .background-title {
+         top: 90px;
+     }
+
+     .bg-title-text {
+         font-size: 14rem;
+     }
+ }
+
+ @media (min-width: 1024px) {
+     .bg-title-text {
+         font-size: 17rem;
+     }
+ }

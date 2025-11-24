@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Playfair+Display:ital,wght@1,700&display=swap');
+
+:root {
+    --color-vibrant-pink: #e7469d; 
+    --color-light-pink: #f7d7d7; 
+    --color-light-pink-border: #e08c8c; 
+    --color-body-bg: #f4efec;
+    --color-secondary-dark: #524b4b; 
+    --color-dark-pink: #f08080; 
+}
+
+body {
+    background-color: var(--color-body-bg) !important; 
+    font-family: 'Poppins', sans-serif !important;
+    color: #000;
+}
+
+.text-vibrant-pink { color: var(--color-vibrant-pink); }
+.bg-custom-light-pink { background-color: var(--color-light-pink); }
+.border-light-pink-border { border-color: var(--color-light-pink-border); }
+.text-secondary-dark { color: var(--color-secondary-dark); }
+
+.title-italic {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.hover-vibrant-pink:hover {
+    color: var(--color-vibrant-pink);
+    transition: color 0.3s ease;
+}
+
+.btn-pink-custom {
+    background-color: var(--color-vibrant-pink);
+    border-color: var(--color-vibrant-pink);
+    padding: 1rem 2.5rem;
+    letter-spacing: 1px;
+}
+.btn-pink-custom:hover {
+    background-color: #d13d8d; 
+    border-color: #d13d8d;
+}
+.letter-spacing-1 { letter-spacing: 1px; }
+
+.background-title {
+    position: absolute;
+    top: 60px; 
+    width: 100%;
+    z-index: 0;
+    text-align: center;
+    pointer-events: none;
+    line-height: 0.75;
+}
+.bg-title-text {
+    font-size: 8rem;
+    font-weight: 800;
+    color: rgba(231, 70, 157, 0.25);
+}
+
+.icon-size {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.card-hover-effect {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover-effect:hover {
+    transform: scale(1.02);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+.motto-note-container {
+    max-width: 400px; 
+    margin: 3rem auto 1rem;
+}
+
+.motto-note-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.motto-note-image:hover {
+    transform: rotate(0deg) scale(1.03); 
+}
+
+/*    MEDIA QUERIES    */
+
+@media (min-width: 768px) {
+    .background-title { top: 90px; }
+    .bg-title-text { font-size: 14rem; }
+}
+
+@media (min-width: 1024px) {
+    .bg-title-text { font-size: 17rem; }
+}
+
+@media (max-width: 576px) {
+    .motto-note-container {
+        max-width: 90%; 
+    }
+}

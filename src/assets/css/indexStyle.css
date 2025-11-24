@@ -1,0 +1,173 @@
+body.portfolio-wrapper {
+    background: #f4efec;
+    font-family: "Poppins", sans-serif;
+    color: #000;
+    position: relative;
+    overflow-x: hidden;
+    
+}
+
+.logo-mini {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.author-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.author-name {
+    font-size: 0.85rem;
+}
+
+.background-title {
+    position: absolute;
+    top: 110px;
+    width: 100%;
+    z-index: 0;
+    text-align: center;
+}
+
+.bg-title {
+    font-size: 7rem;
+    font-weight: 800;
+    color: rgba(231, 70, 157, 0.25); 
+    line-height: 0.75;
+}
+
+.foreground-title {
+    position: relative;
+    z-index: 5;
+}
+
+.foreground-title .post {
+    font-size: 2.7rem;
+    font-weight: 700;
+}
+
+.foreground-title .folio {
+    font-size: 2.7rem;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+}
+
+.window-card {
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    transform: translate(-60%, 50px); 
+    background: #f7d7d7;
+    border-radius: 12px;
+    width: 210px; 
+    padding-bottom: 10px; 
+}
+
+.window-card hr {
+    margin: 0;
+    border: none;
+    height: 1px;
+    background-color: #e08c8c;
+    opacity: 1;
+}
+
+.window-card-header {
+    display: flex;
+    gap: 6px;
+    padding: 10px;
+}
+
+.window-card-header .dot {
+    width: 10px;
+    height: 10px;
+    background: #e08c8c;
+    border-radius: 50%;
+}
+
+.window-card-body {
+    padding: 0 15px 10px;
+}
+
+.window-card-body h5 {
+    font-size: 1rem;
+}
+
+.window-card-body p {
+    font-size: 0.75rem;
+}
+
+.laptop-img {
+    max-width: 300px;
+    margin: 60px auto 0 auto;
+}
+
+.footer-custom-bg {
+    color: #524b4b;
+}
+
+/*  TABLETS (>=576px)   */
+@media (min-width: 576px) {
+
+    .bg-title {
+        font-size: 10rem;
+    }
+
+    .foreground-title .post,
+    .foreground-title .folio {
+        font-size: 3.2rem;
+    }
+
+    .laptop-img {
+        max-width: 380px;
+    }
+
+    .window-card {
+        width: 230px;
+        transform: translate(-65%, 50px);
+    }
+}
+
+/*  DESKTOP (>=768px)   */
+@media (min-width: 768px) {
+
+    .bg-title {
+        font-size: 14rem;
+    }
+
+    .foreground-title .post,
+    .foreground-title .folio {
+        font-size: 4rem;
+    }
+
+    .laptop-img {
+        max-width: 460px;
+    }
+
+    .window-card {
+        width: 250px; 
+        transform: translate(-70%, 50px); 
+    }
+}
+
+/*  DESKTOP GRANDE (>=992px) */
+@media (min-width: 992px) {
+
+    .bg-title {
+        font-size: 17rem;
+    }
+
+    .foreground-title .post,
+    .foreground-title .folio {
+        font-size: 4.5rem;
+    }
+
+    .laptop-img {
+        max-width: 520px;
+    }
+
+    .window-card {
+        width: 260px;
+        transform: translate(-75%, 50px);
+    }
+}
