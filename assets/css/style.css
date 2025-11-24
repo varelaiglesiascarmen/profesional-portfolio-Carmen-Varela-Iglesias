@@ -1,4 +1,4 @@
-/*    ENLACES   */
+/*    ENLACES GENÉRICOS (<a>)   */
 a {
     color: #000000; 
     text-decoration: none; 
@@ -6,12 +6,54 @@ a {
     display: inline-flex;
     align-items: center;
     transform: scale(1); 
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, color 0.3s; /* Añadir color a la transición */
 }
 
- a:hover {
+a:hover {
     text-decoration: underline;
     color: #a11b63;
     transform: scale(1.05);
 }
 
+/*    BOTONES GENÉRICOS (<button>)   */
+button {
+    background-color: #DD73A2; 
+    border: none;
+    cursor: pointer;
+    border-radius: 50px; /* Bordes redondeados */
+    padding: 10px 40px; 
+
+    /* Tipografía */
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: none;
+
+    /* Color del texto (ajustado para ser legible en el botón rosa) */
+    color: #FFFFFF !important; 
+    
+    /* Efectos */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #5A0332; /* Tono más oscuro al pasar el ratón */
+    color: #DD73A2 !important; /* El texto se aclara al pasar el ratón */
+}
+
+/* Ajuste para enlaces DENTRO de un botón (como en tu botón CV).
+   Esto anula el estilo genérico de <a> para el texto del botón.
+*/
+button a {
+    display: inline-block;
+    color: inherit; /* Hereda el color del texto de la etiqueta <button> */
+    font-size: inherit; /* Hereda el tamaño de la etiqueta <button> */
+    text-decoration: none; /* Asegura que no se subraye */
+    transform: none; /* Desactiva el escalado del <a> genérico */
+    transition: none; /* Desactiva las transiciones del <a> genérico */
+}
+
+/* El enlace dentro del botón no debería reaccionar al hover, solo el botón */
+button:hover a {
+    color: inherit; /* Asegura que el color de <a> siga el hover de <button> */
+}
