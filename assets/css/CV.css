@@ -1,12 +1,10 @@
 body {
-    /* Color de fondo exterior del diseño */
-    background-color: #F7D7D7; 
+    background-color: #fdeef4; 
     font-family: Arial, sans-serif;
 }
 
 .cv-container {
     background-color: #ffffff; 
-    border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     margin: 20px auto;
@@ -79,15 +77,18 @@ body {
 .experience-item, .education-item, .student-program-item {
     margin-bottom: 20px;
 }
+
 .experience-item h4, .education-item h4 {
     color: #333;
     font-size: 1.2rem;
     margin-bottom: 5px;
 }
+
 .experience-item p, .education-item p {
     color: #666;
     margin-bottom: 5px;
 }
+
 .experience-item ul {
     list-style: disc;
     padding-left: 20px;
@@ -98,6 +99,7 @@ body {
     text-align: center;
     margin-top: 30px;
 }
+
 .skills-word-cloud img {
     width: 100%;
     height: auto;
@@ -111,6 +113,7 @@ body {
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
+
 .recommendation-box a {
     text-decoration: none;
     color: #333;
@@ -119,9 +122,11 @@ body {
     padding: 0;
     font-size: 1rem; 
 }
+
 .recommendation-box a:hover {
     color: #ee5b7c;
 }
+
 .recommendation-box i {
     margin-right: 10px;
     color: #ee5b7c;

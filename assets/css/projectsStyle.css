@@ -1,0 +1,29 @@
+.folder {
+    width: 300px;
+    margin: 15px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #e6d0c7;
+    transition: 0.3s ease;
+}
+
+.folder .tab {
+    background: #d9a89f;
+    padding: 15px;
+    font-weight: bold;
+    border-bottom: 1px solid #b98d86;
+}
+
+.folder .content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    background: #fff;
+    transition: max-height 0.4s ease;
+}
+
+.folder.open .content {
+    max-height: 200px; /* ajusta según tus textos */
+    padding: 15px;
+}

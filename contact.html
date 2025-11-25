@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Carmen Varela Iglesias">
+    <meta name="description"
+        content="Portfolio profesional de Carmen Varela Iglesias. Diseño, proyectos y trayectoria." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords"
+        content="web devoloper, portfolio, carmen varela iglesias, junior web developer, front end developer, proyectos, diseño, estudios, experiencia">
+    <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/contactStyle.css" />
+    <link rel="icon" href="./assets/img/logo/greenLogo.png">
+    <script src="./assets/js/main.js" defer></script>
+    <title>CONTACTO | Porfessional Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header id="header"></header>
+
+    <main>
+        <section>
+            <h1 class="main-title">Carmen Varela Iglesias | Portfolio Profesional</h1>
+        </section>
+
+        <section class="envelope-container" id="envelopeContainer">
+            <!-- La parte trasera del sobre (visible después de la animación de volteo) -->
+            <div class="envelope-back flex items-center justify-center">
+                <p class="text-white font-bold text-2xl">¡Gracias por tu mensaje!</p>
+            </div>
+            
+            <!-- La "carta" que contiene el formulario (inicialmente visible) -->
+            <div class="letter" id="letter">
+                <!-- Se ha añadido 'id="contactForm"' para JS -->
+                <form id="contactForm" action="https://formspree.io/f/xjkayzoe" method="POST">
+                    <h2>Pongámosnos en contacto</h2>
+                    <input type="text" id="name" name="name" placeholder="Tu nombre" required maxlength="50">
+                    <input type="email" id="email" name="email" placeholder="tu@email.com" required maxlength="100">
+                    <input type="text" id="subject" name="subject" placeholder="Asunto del mensaje" required maxlength="100">
+                    <textarea id="message" name="message" rows="5" placeholder="Escribe tu mensaje aquí..."
+                        required maxlength="500"></textarea>
+                    
+                    <button type="submit" id="submitButton">Enviar Mensaje</button>
+                    
+                    <!-- Indicador de carga -->
+                    <div class="loading-dots" id="loadingIndicator">
+                        <span>•</span><span>•</span><span>•</span>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Mensaje de éxito flotante -->
+        <div id="successMessage" class="success-message">
+            Mensaje enviado con éxito. ¡Gracias!
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer"></footer>
+
+    <script src="assets/js/contact.js"></script>
+
+</body>
+
+</html>

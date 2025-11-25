@@ -1,59 +1,93 @@
-/*    ENLACES GENÉRICOS (<a>)   */
+body {
+    background-color: var(--color-bg-light);
+    min-height: 100vh;
+    padding: 0;
+}
+
+:root {
+    --color-bg-light: #fdeef4;
+    --color-accent-pink: #d84381;
+    --color-text-dark: #333;
+}
+
 a {
-    color: #000000; 
-    text-decoration: none; 
-    font-size: 0.8rem; 
+    color: #000000;
+    text-decoration: none;
+    font-size: 0.8rem;
     display: inline-flex;
     align-items: center;
-    transform: scale(1); 
-    transition: transform 0.3s ease-in-out, color 0.3s; /* Añadir color a la transición */
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out, color 0.3s;
 }
 
 a:hover {
     text-decoration: underline;
     color: #a11b63;
     transform: scale(1.05);
+    font-weight: bold;
 }
 
-/*    BOTONES GENÉRICOS (<button>)   */
 button {
-    background-color: #DD73A2; 
+    background-color: #DD73A2;
     border: none;
     cursor: pointer;
-    border-radius: 50px; /* Bordes redondeados */
-    padding: 10px 40px; 
-
-    /* Tipografía */
+    border-radius: 100px;
+    padding: 10px 40px;
     font-size: 1.2rem;
     font-weight: bold;
     text-transform: none;
-
-    /* Color del texto (ajustado para ser legible en el botón rosa) */
-    color: #FFFFFF !important; 
-    
-    /* Efectos */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #5A0332; /* Tono más oscuro al pasar el ratón */
-    color: #DD73A2 !important; /* El texto se aclara al pasar el ratón */
+    background-color: #5A0332;
+    color: #DD73A2 !important;
 }
 
-/* Ajuste para enlaces DENTRO de un botón (como en tu botón CV).
-   Esto anula el estilo genérico de <a> para el texto del botón.
-*/
 button a {
     display: inline-block;
-    color: inherit; /* Hereda el color del texto de la etiqueta <button> */
-    font-size: inherit; /* Hereda el tamaño de la etiqueta <button> */
-    text-decoration: none; /* Asegura que no se subraye */
-    transform: none; /* Desactiva el escalado del <a> genérico */
-    transition: none; /* Desactiva las transiciones del <a> genérico */
+    color: inherit;
+    font-size: inherit;
+    text-decoration: none;
+    transform: none;
+    transition: none;
 }
 
-/* El enlace dentro del botón no debería reaccionar al hover, solo el botón */
 button:hover a {
-    color: inherit; /* Asegura que el color de <a> siga el hover de <button> */
+    color: inherit;
+}
+
+#footer {
+    background-color: rgba(122, 89, 103, 0.8) !important;
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
+    margin-bottom: 0 !important;
+}
+
+#footer p {
+    margin-bottom: 0 !important;
+}
+
+#header {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 1rem;
+}
+
+#header a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out, color 0.3s;
+}
+
+#header a:hover {
+    text-decoration: underline;
+    color: #a11b63;
+    transform: scale(1.05);
+    font-weight: bold;
 }
