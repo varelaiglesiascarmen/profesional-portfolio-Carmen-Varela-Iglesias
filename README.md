@@ -52,7 +52,7 @@ I developed this portfolio to present it in selection processes, showcasing my w
 > This video is currently a placeholder and will be replaced by the final version, featuring a brief introduction about me, my experience, and my professional strengths.
 
 ### CV
-<img width="1716" height="1303" alt="image" src="https://github.com/user-attachments/assets/bfc3d508-3d1e-47a2-9ac0-844105d35e51" />
+<img width="1717" height="1303" alt="image" src="https://github.com/user-attachments/assets/f227a109-b567-4209-8127-3f744ea39902" />
 
 ### Contact page
 <img width="1717" height="1303" alt="image" src="https://github.com/user-attachments/assets/9a3f18ec-0a35-428b-bf6b-9bc2ff5c167b" />
@@ -98,4 +98,5 @@ You can contact me via:
 ## License
 
 This project is licensed under the MIT license. You are free to use, modify, or distribute the code, provided you respect the original attribution.
+
 
