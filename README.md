@@ -14,7 +14,7 @@
 8. [Contact](#contact)
 9. [License](#license)
 
-> [Translation into Spanish](README_ES.md)
+> [Translation into Spanish](readme-es/README.md)
 
 ## Introduction
 This repository contains my Professional Portfolio, a personal website that I have designed and developed entirely using Bootstrap 5, HTML, CSS, and JavaScript. Its purpose is to showcase my projects, skills, and professional journey as a Front-End Developer.
@@ -98,3 +98,4 @@ You can contact me via:
 ## License
 
 This project is licensed under the MIT license. You are free to use, modify, or distribute the code, provided you respect the original attribution.
+
