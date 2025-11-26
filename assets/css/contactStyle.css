@@ -1,0 +1,188 @@
+/* Estilos Específicos para el Formulario de Carta */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: calc(100vh - 140px);
+    box-sizing: border-box;
+    position: relative;
+}
+
+.main-title {
+    font-family: 'Lexend Deca', sans-serif;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.8em;
+    padding-bottom: 10px;
+}
+
+/* Contenedor de la carta */
+.envelope-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    perspective: 1000px;
+}
+
+/* Elemento de la carta que contiene el formulario */
+.letter {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Animación de volteo */
+    transform-origin: bottom;
+    position: relative;
+}
+
+/* Título del formulario dentro de la carta */
+.letter h2 {
+    font-family: 'Lexend Deca', sans-serif;
+    color: #C00C6D;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+    font-weight: 700;
+}
+
+/* Estilos de los campos (input, textarea) */
+.letter input,
+.letter textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: transparent;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1em;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease, background-color 0.3s;
+}
+
+.letter input:hover, .letter textarea:hover {
+    border: 1px solid #C00C6D;
+    transition: border-color 0.3s ease, background-color 0.3s;
+}
+
+.letter input:focus,
+.letter textarea:focus {
+    border-color: #C00C6D;
+    outline: none;
+    box-shadow: 0 0 5px rgba(216, 67, 129, 0.4);
+    background-color: transparent;
+    /* Fondo muy suave al enfocar */
+}
+
+.letter textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/*
+    ==========================================
+    Animación del Sobre al Enviar
+    ==========================================
+*/
+
+/* El sobre visual (parte trasera) */
+.envelope-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../logos/sobre.svg);
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    z-index: 5;
+    transition: transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+}
+
+/* Clase que se añade al enviar */
+.sending .letter {
+    transform: rotateX(-180deg);
+    /* El formulario se voltea para simular que entra al sobre */
+}
+
+.sending .envelope-back {
+    transform: rotateX(0deg);
+    /* El sobre se voltea a su posición normal */
+}
+
+/* Animación final de vuelo del sobre */
+.flying {
+    animation: flyAway 1s forwards 1s;
+    /* Empieza 1s después del volteo */
+}
+
+@keyframes flyAway {
+    to {
+        transform: translateY(-500px) rotate(15deg) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Mensaje de éxito */
+.success-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 40px;
+    color: #C00C6D;
+    font-size: large;
+    font-family: 'Lexend Deca', sans-serif;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.success-message.show {
+    opacity: 1;
+}
+
+/* Estilos de carga */
+.loading-dots {
+    text-align: center;
+    padding: 10px 0;
+    color: var(--color-accent-pink);
+    font-size: 1.5em;
+    display: none;
+}
+
+.sending .loading-dots {
+    display: block;
+}
+
+.loading-dots span {
+    display: inline-block;
+    animation: dot-flicker 1.4s infinite ease-in-out both;
+}
+
+.loading-dots span:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.loading-dots span:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+.loading-dots span:nth-child(3) {
+    animation-delay: 0s;
+}
+
+@keyframes dot-flicker {
+    0%, 80%, 100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1.0);
+    }
+}
