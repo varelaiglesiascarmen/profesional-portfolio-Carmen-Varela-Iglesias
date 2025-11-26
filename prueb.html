@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archivador de Proyectos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f7e8ec; /* Fondo general similar al de tu imagen */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.archivador-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    position: relative;
+}
+
+.archivador {
+    position: relative;
+    width: 90%; /* Ajusta el ancho del archivador */
+    max-width: 1200px;
+    height: 600px; /* Altura fija para el archivador */
+    background-color: #f3e0e5; /* Fondo del "cuerpo" del archivador */
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Para que los contenidos de las carpetas no se desborden inicialmente */
+}
+
+.folder {
+    position: absolute;
+    width: 250px; /* Ancho de la pestaña de la carpeta */
+    height: 60px; /* Altura de la pestaña */
+    background-color: #e6a7c0; /* Color base de las carpetas */
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10; /* Asegura que las carpetas estén por encima del contenido */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.folder-name {
+    pointer-events: none; /* Para que el evento hover se dispare en la carpeta y no en el texto */
+}
+
+.folder .file-content {
+    position: absolute;
+    top: 100%; /* Inicialmente debajo de la pestaña */
+    left: 0;
+    width: calc(100% + 2px); /* Ancho del archivo, ajustado para evitar bordes */
+    height: calc(100% - 60px); /* Altura del archivo */
+    background-color: #ffffff; /* Color del "papel" del archivo */
+    border: 1px solid #ddd;
+    border-radius: 0 0 5px 5px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px); /* Ligeramente hacia arriba para el efecto */
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+    z-index: 5; /* Por debajo de las carpetas */
+    color: #333;
+}
+
+.folder:hover {
+    transform: translateY(-10px); /* Efecto al pasar el ratón por encima de la carpeta */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index: 20; /* La carpeta activa debe estar por encima de las demás */
+}
+
+.folder:hover .file-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Muestra el contenido del archivo */
+    z-index: 15; /* El contenido debe estar por encima de otras carpetas inactivas */
+}
+
+/* Posiciones y colores de las carpetas según tu imagen */
+.folder-1 {
+    top: 50px;
+    right: 50px;
+    background-color: #ce498b; /* Color rosa oscuro */
+    width: 300px;
+}
+
+.folder-1 .file-content {
+    left: auto;
+    right: -1px; /* Alinea a la derecha */
+    width: 302px;
+}
+
+.folder-2 {
+    top: 150px;
+    left: 50px;
+    background-color: #f0e6e4; /* Color claro casi blanco */
+    color: #333; /* Texto oscuro para contraste */
+    width: 350px;
+}
+
+.folder-2 .file-content {
+    left: -1px;
+    width: 352px;
+}
+
+
+.folder-3 {
+    top: 250px;
+    right: 150px;
+    background-color: #f7d2be; /* Color naranja claro */
+    width: 280px;
+}
+
+.folder-3 .file-content {
+    left: auto;
+    right: -1px;
+    width: 282px;
+}
+
+.folder-4 {
+    top: 350px;
+    left: 100px;
+    background-color: #7b2049; /* Color morado oscuro */
+    color: #f0e6e4; /* Texto claro */
+    width: 200px;
+}
+
+.folder-4 .file-content {
+    left: -1px;
+    width: 202px;
+}
+
+
+.footer-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Altura de la barra inferior oscura */
+    background-color: #3f1025; /* Color oscuro */
+    z-index: 2; /* Para que esté por debajo de las carpetas si se expanden mucho */
+}
+
+footer {
+    background-color: #7b2049; /* Color de la barra inferior del footer */
+    color: #f0e6e4;
+    padding: 15px 0;
+    width: 100%;
+    margin-top: auto; /* Empuja el footer hacia abajo */
+}
+    </style>
+</head>
+<body>
+    <div class="container-fluid archivador-container">
+        <div class="archivador">
+            <div class="folder folder-1" data-project="project1">
+                <span class="folder-name">Proyecto 1</span>
+                <div class="file-content">
+                    <h3>Detalles del Proyecto 1</h3>
+                    <p>Este es el contenido del archivo para el Proyecto 1. Podrías incluir un enlace a la demo, descripción, tecnologías usadas, etc.</p>
+                    <a href="#" class="btn btn-sm btn-light">Ver Demo</a>
+                </div>
+            </div>
+
+            <div class="folder folder-2" data-project="project2">
+                <span class="folder-name">Proyecto 2</span>
+                <div class="file-content">
+                    <h3>Detalles del Proyecto 2</h3>
+                    <p>Información detallada sobre el Proyecto 2. Aquí puedes mostrar imágenes, videos o cualquier otro recurso relevante.</p>
+                    <a href="#" class="btn btn-sm btn-light">Más información</a>
+                </div>
+            </div>
+
+            <div class="folder folder-3" data-project="project3">
+                <span class="folder-name">Proyecto</span>
+                <div class="file-content">
+                    <h3>Detalles del Proyecto 3</h3>
+                    <p>Contenido para el tercer proyecto. Adapta esta sección para mostrar lo que necesites para tu portafolio.</p>
+                    <a href="#" class="btn btn-sm btn-light">Ir al Proyecto</a>
+                </div>
+            </div>
+
+            <div class="folder folder-4" data-project="project4">
+                <span class="folder-name">Proyecto</span>
+                <div class="file-content">
+                    <h3>Detalles del Proyecto 4</h3>
+                    <p>Aquí puedes describir el cuarto proyecto. Puedes usar listas, imágenes o cualquier otro elemento HTML.</p>
+                    <a href="#" class="btn btn-sm btn-light">Descargar</a>
+                </div>
+            </div>
+
+            <div class="footer-bar"></div>
+        </div>
+    </div>
+
+    <footer class="text-center py-3">
+        <p>&copy; 2025 Carmen Varela Iglesias. Desarrolladora Front-End. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const folders = document.querySelectorAll('.folder');
+
+    folders.forEach(folder => {
+        folder.addEventListener('mouseenter', function() {
+            // Elimina la clase 'active-folder' de todas las carpetas
+            folders.forEach(f => f.classList.remove('active-folder'));
+            // Agrega la clase 'active-folder' a la carpeta actual
+            this.classList.add('active-folder');
+        });
+
+        // Opcional: Si quieres que el archivo se oculte al salir de la carpeta
+        // folder.addEventListener('mouseleave', function() {
+        //     this.classList.remove('active-folder');
+        // });
+    });
+});
+    </script>
+</body>
+</html>

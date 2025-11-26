@@ -14,7 +14,7 @@
     rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/contactStyle.css" />
-    <link rel="icon" href="./assets/img/logo/greenLogo.png">
+    <link rel="icon" href="./assets/logos/logo-web.svg">
     <script src="./assets/js/main.js" defer></script>
     <title>CONTACTO | Porfessional Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,15 +34,12 @@
         </section>
 
         <section class="envelope-container" id="envelopeContainer">
-            <!-- La parte trasera del sobre (visible después de la animación de volteo) -->
-            <div class="envelope-back flex items-center justify-center">
-                <p class="text-white font-bold text-2xl">¡Gracias por tu mensaje!</p>
-            </div>
+            <div class="envelope-back flex items-center justify-center"></div>
             
             <!-- La "carta" que contiene el formulario (inicialmente visible) -->
             <div class="letter" id="letter">
                 <!-- Se ha añadido 'id="contactForm"' para JS -->
-                <form id="contactForm" action="https://formspree.io/f/xjkayzoe" method="POST">
+                <form id="contactForm"  method="POST"> <!--action="https://formspree.io/f/xjkayzoe"-->
                     <h2>Pongámosnos en contacto</h2>
                     <input type="text" id="name" name="name" placeholder="Tu nombre" required maxlength="50">
                     <input type="email" id="email" name="email" placeholder="tu@email.com" required maxlength="100">
